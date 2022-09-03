@@ -1,5 +1,9 @@
 # TRIVIA APP
 
+## Setting Up
+To use this project python3, pip and node should be installed.
+> View the [Backend README](./backend/README.md) for remaining information on setting up and setting
+
 ## API REFERENCE
 
 ### Getting Started
