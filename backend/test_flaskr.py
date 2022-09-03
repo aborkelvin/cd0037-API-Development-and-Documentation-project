@@ -95,7 +95,7 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(response.status_code,422)
 
 
-    #This was commented out after initial test as the question with the id was deleted in the initial test
+    #This test was commented out after initial test as the question with the id was deleted in the initial test, remove after repopulating the database
     '''def test_delete_questions(self):
         response = self.client().delete("/questions/10")
         data = json.loads(response.data)

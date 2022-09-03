@@ -69,7 +69,8 @@ def create_app(test_config=None):
 
         categorydict = {}
         for category in categories:
-            categorydict[category['id']] = category['type']        
+            categorydict[category['id']] = category['type']
+        
         return jsonify (
             {
                 "success":True,
@@ -220,10 +221,10 @@ def create_app(test_config=None):
     categories in the left column will cause only questions of that
     category to be shown.
     """
-    @app.route('/categories/<int:categoryid>/questions')
-    def retrieve_questioncategorically(categoryid):
-        categoryid = int(categoryid)
+    @app.route('/categories/<categoryid>/questions')
+    def retrieve_questioncategorically(categoryid):                        
         question_selection = Question.query.filter_by(category = categoryid).all()
+        print(question_selection)
         current_questions = paginate_questions(request, question_selection)
 
         if len(current_questions) == 0:
@@ -311,6 +312,17 @@ def create_app(test_config=None):
                 "message": "Not found"                
             }
         ),404
+
+
+    @app.errorhandler(400)
+    def bad_request(error):
+        return jsonify(
+            {
+                "success":False,
+                "error":400,
+                "message": "Bad Request"
+            }
+        ),400
     
     
     @app.errorhandler(422)
@@ -329,7 +341,7 @@ def create_app(test_config=None):
             {
                 "success":False,
                 "error":405,
-                "message": "Method Not allowed"
+                "message": "Method Not Allowed"
             }
         ),405
 
