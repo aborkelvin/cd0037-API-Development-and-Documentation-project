@@ -2,12 +2,12 @@
 
 ## Setting Up
 To use this project python3, pip and node should be installed.
-> View the [Backend README](./backend/README.md) for remaining information on setting up and setting
+> View the [Backend README](./backend/README.md) for remaining information on setting up and starting the server
 
 ## API REFERENCE
 
 ### Getting Started
-- Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, `http://127.0.0.1:5000/`.
+- Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, `http://127.0.0.1:5000/` (running flask run where directed in the backend readme should set this up )
 - Authentication: This version of the application does not require authentication or API keys. 
 
 

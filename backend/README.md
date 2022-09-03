@@ -29,7 +29,7 @@ psql trivia < trivia.psql
 
 ### Run the Server
 
-To run the server, execute this from inside the `/backend` directory:
+To run the server, execute this from inside the `/backend` directory in terminal:
 
 ```bash
 export FLASK_APP=flaskr
